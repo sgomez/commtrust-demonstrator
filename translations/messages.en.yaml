@@ -1,0 +1,17 @@
+menu.user: User
+
+breadcrumb.link_user_list: Users
+
+show.actions: Actions
+show.metadata: Metadata
+
+show.label_id: Id
+show.label_email: Email
+show.label_attributes: Attributes
+show.label_attribute: Attribute
+show.label_value: Value
+
+list.label_email: Email
+list.label__action: Actions
+
+filter.label_email: Email

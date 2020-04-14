@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui secondary menu">
+        <div class="right menu">
+            <div class="item">
+                <a href="{{ path('logout') }}" class="ui secondary button">Log-out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <div class="ui segment">
+                <h1>
+                    vTicketId Locator
+                </h1>
+
+                <form class="ui form" method="post">
+                    {{ form_row(form.locator) }}
+                    {{ form_rest(form) }}
+                </form>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

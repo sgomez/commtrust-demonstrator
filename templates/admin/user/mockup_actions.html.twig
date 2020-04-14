@@ -1,0 +1,24 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{%  block field_value %}
+    <div class="alert alert-warning" style="max-width: 300px;">
+        <i class="fa fa-warning"></i> This is a mockup
+    </div>
+    <hr>
+    <form>
+        <div class="checkbox">
+            <label>
+                <input type="checkbox"> Check is passport is validated
+            </label>
+        </div>
+    </form>
+    <hr>
+    <form class="form-inline">
+        <div class="form-group">
+            <label for="exampleInputEmail2">OTP Token</label>
+            <input type="input" class="form-control" id="exampleInputEmail2" placeholder="Put valid OTP token">
+        </div>
+        <button class="btn btn-default">Send registration to email</button>
+        <button  class="btn btn-default">Confirm token</button>
+    </form>
+{% endblock %}

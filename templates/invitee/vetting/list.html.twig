@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <div class="ui segment">
+                <h2 class="ui header">
+                    Register your 2FA
+                </h2>
+                <div class="ui hidden divider"></div>
+
+                <div class="ui huge vertical buttons">
+                    <a href="{{ path('invite_token_totp') }}" class="ui fluid labeled icon button">
+                        <i class="ui home icon"></i> Face to Face
+                    </a>
+                    <div href="" class="ui disabled fluid labeled icon button">
+                        <i class="ui phone icon"></i> Remote
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock body %}

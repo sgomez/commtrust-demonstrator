@@ -1,0 +1,8 @@
+parameters:
+    saml_sp_publickey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer'
+    saml_sp_privatekey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem'
+    saml_metadata_publickey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer'
+    saml_metadata_privatekey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_privatekey.pem'
+    saml_idp_remote_entity_id: 'http://idp.localhost/simplesaml/saml2/idp/metadata.php'
+    saml_idp_remote_sso_url: 'http://idp.localhost/simplesaml/saml2/idp/SSOService.php'
+    saml_idp_remote_publickey: '%kernel.root_dir%/../vendor/surfnet/stepup-saml-bundle/src/Resources/keys/development_publickey.cer'

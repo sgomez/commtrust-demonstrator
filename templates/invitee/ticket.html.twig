@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui secondary menu">
+        <div class="right menu">
+            <div class="item">
+                <a href="{{ path('logout') }}" class="ui secondary button">Log-out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <div class="ui segment">
+                <h1>
+                    vTicketId Information
+                </h1>
+
+                <table class="ui definition table">
+                    <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ attributes['displayName'][0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ attributes['mail'][0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Organization</td>
+                        <td>{{ attributes['schacHomeOrganization'][0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Locator</td>
+                        <td>{{ app.user.virtualTicket.locator }}</td>
+                    </tr>
+                    <tr>
+                        <td>¿Vouched?</td>
+                        <td>{{ app.user.virtualTicket.isVouched ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+

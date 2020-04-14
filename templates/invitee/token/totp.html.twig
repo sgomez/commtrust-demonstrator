@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <div class="ui segment">
+                <h2 class="ui header">
+                    Register your 2FA: TOTP
+                </h2>
+                <div class="ui hidden divider"></div>
+
+                <img src="{{ qr_code_path(qr) }}" />
+
+                {{ form(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

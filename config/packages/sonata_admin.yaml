@@ -1,0 +1,14 @@
+sonata_admin:
+    security:
+        role_admin: ROLE_ADMIN
+        role_super_admin: ROLE_SUPER_ADMIN
+    title: CommTrust
+    title_logo: 'assets/images/geant.jpg'
+    dashboard:
+        blocks:
+            - { type: sonata.admin.block.admin_list, position: left }
+
+sonata_block:
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]

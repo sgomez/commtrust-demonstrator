@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui secondary menu">
+        <div class="right menu">
+            <div class="item">
+                <a href="{{ path('logout') }}" class="ui secondary button">Log-out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <div class="ui segment">
+                <h1>
+                    vTicketId
+                </h1>
+                <p style="font-size: 3em">
+                    <img src="{{ qr_code_data_uri(code, { writer: 'svg', size: 150 }) }}" />
+                </p>
+
+                <div class="ui visible message">
+                    <p>{{ code }}</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

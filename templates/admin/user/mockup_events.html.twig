@@ -1,0 +1,30 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{%  block field_value %}
+    <div class="alert alert-warning" style="max-width: 300px;">
+        <i class="fa fa-warning"></i> This is a mockup
+    </div>
+
+    <table class="table table-condensed table-responsive">
+        <thead>
+        <tr>
+            <th>Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{ date('2020-02-13 10:10')  | date }}</td>
+            <td>User self registration</td>
+        </tr>
+        <tr>
+            <td>{{ date('2020-02-14 09:10')  | date }}</td>
+            <td>The scanner passport was presented to me</td>
+        </tr>
+        <tr>
+            <td>{{ date('2020-02-14 09:20')  | date }}</td>
+            <td>The MFA token was used in my presence</td>
+        </tr>
+        </tbody>
+    </table>
+{% endblock %}

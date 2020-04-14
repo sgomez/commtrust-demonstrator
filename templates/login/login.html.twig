@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {% set referer = app.request.headers.get('referer') ?: app.session.get('_security.main.target_path') | default('/') %}
+
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+                <div class="ui segment">
+                    <img src="{{ asset('assets/images/geant.jpg') }}" alt="GEANT Logo" class="ui centered small image" id="logo">
+                    <h2 class="ui header">
+                        Log in
+                        <div class="ui sub header">CommTrust</div>
+                    </h2>
+                    <div class="ui hidden divider"></div>
+
+                    <div class="ui huge vertical buttons">
+                        <a href="{{ path('saml_acs_init') }}?_target_path={{ referer }}" class="ui fluid labeled icon button">
+                            <i class="ui icon">
+                                <img src="{{ asset('assets/images/geant-icon.png') }}" style="height: 32px; margin-top: 10px">
+                            </i> Login
+                        </a>
+                    </div>
+                </div>
+
+                {% block error %}
+                    {% if error is defined and error %}
+                        <div class="ui negative icon message">
+                            <i class="ban icon"></i>
+                            <div class="content">
+                                <div class="header">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+                                <p style="text-align: left;">Esta aplicación require que sea de dado de alta previamente, contacte con el administrador de la aplicación.</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endblock %}
+        </div>
+    </div>
+{% endblock body %}

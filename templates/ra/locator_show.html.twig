@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="ui secondary menu">
+        <div class="right menu">
+            <div class="item">
+                <a href="{{ path('logout') }}" class="ui secondary button">Log-out</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="ui middle aligned center aligned grid">
+        <div class="column">
+            <div class="ui segment">
+                <h1>
+                    vTicketId Information
+                </h1>
+
+                <table class="ui definition table">
+                    <tbody>
+                    <tr>
+                        <td>Name</td>
+                        <td>{{ vticket.owner.attributes['displayName'][0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{ vticket.owner.attributes['mail'][0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Organization</td>
+                        <td>{{ vticket.owner.attributes['schacHomeOrganization'][0] }}</td>
+                    </tr>
+                    <tr>
+                        <td>Locator</td>
+                        <td>{{ vticket.locator }}</td>
+                    </tr>
+                    <tr>
+                        <td>¿Vouched?</td>
+                        <td>{{ vticket.isVouched ? 'Yes' : 'No' }}</td>
+                    </tr>
+                    </tbody>
+                </table>
+
+                {% if not vticket.isVouched %}
+
+                <form class="ui form" method="post" action="{{ path('ra_locator_validate', {'locator': vticket.locator}) }}" onsubmit="return confirm('Are you sure you want to validate this item?');">
+                    <input type="hidden" name="_method" value="POST">
+                    <input type="hidden" name="_token" value="{{ csrf_token('validate' ~ vticket.id) }}">
+                    <button class="ui button">Validate</button>
+                </form>
+
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

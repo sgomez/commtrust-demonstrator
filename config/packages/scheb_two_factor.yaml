@@ -1,0 +1,25 @@
+# See the configuration reference at https://github.com/scheb/two-factor-bundle/blob/master/Resources/doc/configuration.md
+scheb_two_factor:
+    security_tokens:
+        - Symfony\Component\Security\Guard\Token\PostAuthenticationGuardToken
+    email:
+        digits: 6
+        enabled: true
+        sender_email: no-reply@commtrust.localhost
+        sender_name: Authentication System
+        mailer: App\Service\TwoFactor\MailerService
+        template: login/2fa_form.html.twig
+    totp:
+        enabled: true
+        template: login/2fa_form.html.twig
+        server_name: CommTrust Demo
+        issuer: Demostrator
+        window: 1
+        parameters:
+            image: '/assets/images/geant.jpg'
+    google:
+        enabled: true
+        template: login/2fa_form.html.twig
+        server_name: CommTrust Demo
+        issuer: Demostrator
+        window: 1

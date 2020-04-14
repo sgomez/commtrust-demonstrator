@@ -1,0 +1,19 @@
+surfnet_saml:
+    hosted:
+        attribute_dictionary:
+            ignore_unknown_attributes: false
+        service_provider:
+            enabled: true
+            assertion_consumer_route: saml_acs_respond
+            public_key: "%saml_sp_publickey%"
+            private_key: "%saml_sp_privatekey%"
+        metadata:
+            entity_id_route: saml_acs_metadata
+            public_key: "%saml_metadata_publickey%"
+            private_key: "%saml_metadata_privatekey%"
+    remote:
+        identity_provider:
+            enabled: true
+            entity_id: "%saml_idp_remote_entity_id%"
+            sso_url: "%saml_idp_remote_sso_url%"
+            certificate_file: "%saml_idp_remote_publickey%"

@@ -1,0 +1,20 @@
+{% extends '@SonataAdmin/CRUD/base_show_field.html.twig' %}
+
+{%  block field_value %}
+    <table class="table table-condensed table-responsive">
+        <tbody>
+        {% for key,attributes in value %}
+            <tr>
+                <th style="width: 1%; white-space: nowrap">{{ key }}</th>
+                <td style="background-color: white">
+                    <ul>
+                    {% for attribute in attributes %}
+                        <li>{{ attribute }}</li>
+                    {% endfor %}
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
